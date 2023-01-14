@@ -46,7 +46,7 @@
     return strTime;
   }
 
-  	
+  	console.log(dataProvider)
 	let allItems = dataProvider?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
 		console.log("this is the date")
@@ -62,7 +62,7 @@
 	}) ?? [];
 	console.log(allItems)
 
-	
+
 	var days = [];	//	The days to display in each box
 
 	function randInt(max) {
