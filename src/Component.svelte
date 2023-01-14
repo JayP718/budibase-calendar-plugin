@@ -45,9 +45,10 @@
     let strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
+  	$: dataProvider2 = dataProvider?.rows ?? [];
 
-  	console.log(dataProvider)
-	let allItems = dataProvider?.rows?.map(x => { 
+  	console.log(dataProvider2)
+	let allItems = dataProvider2?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
 		console.log("this is the date")
 		console.log(d)
