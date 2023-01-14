@@ -5,6 +5,7 @@
 	const { styleable } = getContext("sdk")
 	const component = getContext("component")
 
+	
 	export let dataProvider;
 	export let eventDateMapping;
 	export let eventTitleMapping;
@@ -46,6 +47,10 @@
 
 	let allItems = dataProvider?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
+		console.log("this is the date")
+		console.log(d)
+		console.log("this is the title")
+		console.log(x[titleKey])
 		return {
 			title: x[titleKey],
 			date: d,
