@@ -1,6 +1,6 @@
 <script>
 	import Calendar from "./Calendar.svelte";
-	import {getContext, createEventDispatcher, onMount} from 'svelte';
+	import {getContext} from 'svelte';
 
 	const { styleable } = getContext("sdk")
 	const component = getContext("component")
@@ -45,10 +45,10 @@
     let strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
-  	$: dataProvider2 = dataProvider?.rows ?? [];
-
-  	console.log(dataProvider2)
-	let allItems = dataProvider2?.rows?.map(x => { 
+  	console.log("yak")
+  	console.log(dataProvider)
+	console.log("yak")
+	let allItems = dataProvider?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
 		console.log("this is the date")
 		console.log(d)
