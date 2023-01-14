@@ -26,6 +26,7 @@
 
 	let headers = [];
 	let now = new Date();
+	console.log(now)
 	let year = now.getFullYear();		//	this is the month & year displayed
 	let month = now.getMonth();
 	// let eventText="Click an item or date";
@@ -45,6 +46,7 @@
     return strTime;
   }
 
+  	
 	let allItems = dataProvider?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
 		console.log("this is the date")
@@ -58,6 +60,7 @@
 			time: formatAMPM(d)
 		}
 	}) ?? [];
+	console.log(allItems)
 
 	var days = [];	//	The days to display in each box
 
