@@ -14,6 +14,7 @@
 	export let stylingHeaderBackgroundColor;
 	export let stylingHeaderTextColor;
 	export let stylingEventHighlightColor;
+	export let ignoreTimeZone;
 
 	var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 	let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -36,6 +37,10 @@
 	let allDayKey = eventAllDayMapping;
 
   const formatAMPM = (date) => {
+	if(!ignoreTimeZone){
+	date.setMinutes(date.getMinutes() +new Date().getTimezoneOffset())
+	}
+
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let ampm = hours >= 12 ? 'pm' : 'am';
@@ -45,13 +50,13 @@
     let strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
-  	console.log("yak")
-  	console.log(dataProvider)
-	console.log("yak")
+  	
 	let allItems = dataProvider?.rows?.map(x => { 
 		let d = new Date(x[dateKey]);
 		console.log("this is the date")
 		console.log(d)
+
+
 		console.log("this is the title")
 		console.log(x[titleKey])
 		return {
@@ -153,13 +158,22 @@
 		return null;	
 	}
 
-	function itemClick(e) {
+	
+  
+
+	async function itemClick (e) {
     if(onEventClick)
-		  onEventClick(e);
+		  console.log("this is e")
+		  console.log(e)
+		 
+		  await onEventClick({
+      "test":"test"
+    });
 	}
 
 	function dayClick(e) {
 	}
+
 	function headerClick(e) {
 	}
 

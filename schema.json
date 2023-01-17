@@ -6,6 +6,7 @@
     "friendlyName": "Calendar",
     "description": "Calendar",
     "icon": "Text",
+    "hasChildren":true,
     "settings": [
       {
         "type": "dataProvider",
@@ -35,7 +36,13 @@
         "type": "event",
         "label": "On Event Click",
         "key": "onEventClick",
-        "required": false
+        "required": false,
+        "context": [
+          {
+            "label": "Clicked Event",
+            "key": "clickedEvent"
+          }
+        ]
       },
       {
         "type": "color",
@@ -57,6 +64,12 @@
         "key": "stylingEventHighlightColor",
         "required": true,
         "defaultValue": "rgb(38, 128, 235)"
+      },
+      {
+        "type": "boolean",
+        "label": "Ignore Time Zone",
+        "key": "ignoreTimeZone",
+        "defaultValue": true
       }
     ]
   }
