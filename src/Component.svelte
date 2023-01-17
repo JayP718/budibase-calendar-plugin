@@ -38,7 +38,12 @@
 
   const formatAMPM = (date) => {
 	if(!ignoreTimeZone){
-	date.setMinutes(date.getMinutes() +new Date().getTimezoneOffset())
+	console.log('old_date')
+	console.log(date)
+	console.log('new date')
+	date = date.setMinutes(date.getMinutes() +new Date().getTimezoneOffset())
+	console.log(date)
+
 	}
 
     let hours = date.getHours();
